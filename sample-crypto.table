@@ -1,0 +1,34 @@
+# synthetic /proc/crypto dump (demo host with AES-NI + SHA-NI)
+name         : sha256
+driver       : sha256-ssse3
+module       : sha256_ssse3
+priority     : 250
+refcnt       : 2
+selftest     : passed
+internal     : no
+type         : shash
+blocksize    : 64
+digestsize   : 32
+
+name         : aes
+driver       : aesni-intel
+module       : aesni_intel
+priority     : 300
+refcnt       : 1
+selftest     : passed
+internal     : no
+type         : skcipher
+blocksize    : 16
+ivsize       : 16
+max keysize  : 32
+geniv        : seqiv
+
+name         : drbg_pr_sha256
+driver       : drbg_pr_sha256
+module       : drbg
+priority     : 192
+refcnt       : 0
+selftest     : passed
+internal     : yes
+type         : rng
+seedsize     : 32
